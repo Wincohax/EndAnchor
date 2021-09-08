@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "just_end_anchor",
+  "version": "${version}",
+
+  "name": "Just An End Anchor",
+  "description": "Adds a new End Anchor Item that makes it possible to respawn in the end!",
+  "authors": [
+    "KxmischesDomi",
+    "Eudacye"
+  ],
+  "contact": {
+  },
+
+  "license": "GNU GPLv3",
+  "icon": "assets/just_end_anchor/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "de.kxmischesdomi.just_end_anchor.EndAnchorMod"
+    ],
+    "client": [
+      "de.kxmischesdomi.just_end_anchor.client.EndAnchorModClient"
+    ]
+  },
+  "mixins": [
+    "just_end_anchor.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
