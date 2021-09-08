@@ -30,7 +30,6 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.world.BlockView;
@@ -158,7 +157,7 @@ public class EndAnchorBlock extends Block implements BlockEntityProvider {
 	}
 
 	public static boolean isEnd(World world) {
-		return world.getDimension().getSkyProperties().equals(new Identifier("the_end"));
+		return world.getRegistryKey().equals(World.END);
 	}
 
 	public static void charge(World world, BlockPos pos, BlockState state) {
