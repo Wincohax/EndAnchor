@@ -2,7 +2,6 @@ package de.kxmischesdomi.just_end_anchor.common.blocks;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
-import com.google.common.collect.Lists;
 import com.google.common.collect.UnmodifiableIterator;
 import de.kxmischesdomi.just_end_anchor.common.entities.EndAnchorBlockEntity;
 import de.kxmischesdomi.just_end_anchor.common.registry.ModBlockEntities;
@@ -34,13 +33,13 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.CollisionView;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.explosion.Explosion.DestructionType;
 import net.minecraft.world.explosion.ExplosionBehavior;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
@@ -136,7 +135,7 @@ public class EndAnchorBlock extends Block implements BlockEntityProvider {
 		world.createExplosion(null, DamageSource.badRespawnPoint(), explosionBehavior, (double) explodedPos.getX() + 0.5D, (double) explodedPos.getY() + 0.5D, (double) explodedPos.getZ() + 0.5D, 5.0F, false, DestructionType.DESTROY);
 
 
-		if (!world.isClient()) {
+		if (!world.isClient() && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
 
 			for (int i = 0; i < world.random.nextInt(12 - 6) + 6; i++) {
 				EndermiteEntity endermiteEntity = new EndermiteEntity(EntityType.ENDERMITE, world);
