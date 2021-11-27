@@ -6,7 +6,7 @@ import de.kxmischesdomi.just_end_anchor.common.registry.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
-import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.renderer.RenderType;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -16,7 +16,7 @@ public class EndAnchorModClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.END_ANCHOR);
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), ModBlocks.END_ANCHOR);
 		BlockEntityRendererRegistry.INSTANCE.register(ModBlockEntities.END_ANCHOR, EndAnchorBlockEntityRenderer::new);
 	}
 

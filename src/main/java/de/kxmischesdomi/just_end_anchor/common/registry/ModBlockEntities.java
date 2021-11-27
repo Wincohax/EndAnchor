@@ -3,9 +3,9 @@ package de.kxmischesdomi.just_end_anchor.common.registry;
 import de.kxmischesdomi.just_end_anchor.EndAnchorMod;
 import de.kxmischesdomi.just_end_anchor.common.entities.EndAnchorBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -16,7 +16,7 @@ public class ModBlockEntities {
 	public static BlockEntityType<EndAnchorBlockEntity> END_ANCHOR;
 
 	public static void init() {
-		END_ANCHOR = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(EndAnchorMod.MOD_ID, "end_anchor"), FabricBlockEntityTypeBuilder.create(EndAnchorBlockEntity::new, ModBlocks.END_ANCHOR).build());
+		END_ANCHOR = Registry.register(Registry.BLOCK_ENTITY_TYPE, new ResourceLocation(EndAnchorMod.MOD_ID, "end_anchor"), FabricBlockEntityTypeBuilder.create(EndAnchorBlockEntity::new, ModBlocks.END_ANCHOR).build());
 	}
 
 }
