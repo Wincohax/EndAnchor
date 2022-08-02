@@ -3,4 +3,8 @@
 
  This Fork Only Modifies the recipe of the block for a modpack.
  
- All Credits to KxmischesDomi and eudacye_2.
+ All Credits reserved to KxmischesDomi and eudacye_2.
+
+
+
+@Wincohax
